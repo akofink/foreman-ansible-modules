@@ -1,1 +1,2 @@
-git+https://github.com/SatelliteQE/nailgun.git@master#egg=nailgun
+#git+https://github.com/SatelliteQE/nailgun.git@master#egg=nailgun
+git+file:///home/vagrant/nailgun
