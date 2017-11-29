@@ -7,6 +7,6 @@
   - include: tasks/organization.yml
     vars:
       organization_state: present
-  - include: tasks/organization.yml
-    vars:
-      organization_state: absent
+  # - include: tasks/organization.yml
+  #   vars:
+  #     organization_state: absent

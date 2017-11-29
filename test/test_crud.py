@@ -2,11 +2,20 @@ import pytest
 from ansible.cli.playbook import PlaybookCLI
 
 
-MODULES = ['organization', 'product']
+# MODULES = ['organization', 'product']
+MODULES = ['organization']
 
 
 def run_playbook(path, extra_vars=""):
-    cli = PlaybookCLI(['ansible-playbook', path, "--extra-vars", extra_vars])
+    extra_vars += " ansible_python_interpreter=../vcr_python_wrapper.py"
+    cli = PlaybookCLI([
+        'ansible-playbook',
+        "-vvv",
+        "-i", "localhost,",
+        "-c", "local",
+        "-e", extra_vars,
+        path
+    ])
     cli.parse()
     return cli.run()
 
